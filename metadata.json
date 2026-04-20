@@ -1,0 +1,6 @@
+{
+  "name": "Lucky",
+  "description": "Ứng dụng vòng quay may mắn tích hợp thanh toán SePay, đăng ký thành viên và cấu hình API Google AI Studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

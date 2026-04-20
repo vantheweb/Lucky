@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile with balance and API key",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "balance": { "type": "number", "description": "User's current luck credit" },
+        "googleStudioApiKey": { "type": "string", "description": "Personal AI Studio API key" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "balance"]
+    },
+    "SpinHistory": {
+      "title": "Spin History",
+      "description": "Records of user spins",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "result": { "type": "string" },
+        "value": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User records"
+    },
+    "users/{userId}/spins/{spinId}": {
+      "schema": "SpinHistory",
+      "description": "History of spins for a user"
+    }
+  }
+}
